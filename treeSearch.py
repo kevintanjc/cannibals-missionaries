@@ -1,3 +1,5 @@
+import time
+
 def mnc_tree_search(m: int, c: int):
     class Node:
 
@@ -22,7 +24,7 @@ def mnc_tree_search(m: int, c: int):
         possibleCarCombinations = []
         output = []
 
-        if node.Car == "left":
+        if node.car == "left":
             for i in range(node.ml + 1):
                 for j in range(node.cl + 1):
                     #Car must have at most 2 people and at least 1 person
@@ -87,3 +89,9 @@ def mnc_tree_search(m: int, c: int):
             queue.extend(nextStates)
     
     return ()
+
+start = time.time()
+print(mnc_tree_search(4,3))
+end = time.time()
+
+print(end - start)
